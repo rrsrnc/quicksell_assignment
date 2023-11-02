@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+.section {
+  margin: 10px;
+}
+.items {
+  flex: 0 0 calc(20% - 10px); /* Set 20% width for each column (adjust as needed) */
+  margin: 5px;
+}
+.colHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  font-weight: normal;
+}
+.length {
+  padding-left: 5px;
+  color: #938f8f;
+  text-decoration: none;
+}
+.colHeaderTitle{
+    display: flex;
+    align-items: center;
+}
+.colHeaderIcon {
+  display: flex;
+  float: right;
+}

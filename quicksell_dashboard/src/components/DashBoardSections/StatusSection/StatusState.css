@@ -1,0 +1,5 @@
+.statusIcon{
+    display: inline-flex;
+    align-items: center;
+    padding-right: 5px;
+}

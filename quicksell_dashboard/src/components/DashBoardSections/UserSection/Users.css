@@ -1,0 +1,10 @@
+.userHeader{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px;
+}
+.items{
+    flex: 0 0 calc(20% - 10px); /* Set 20% width for each column (adjust as needed) */
+  margin: 5px; 
+}

@@ -1,0 +1,42 @@
+.card {
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0.1, 0.1);
+}
+
+.user_profile {
+  float: right;
+}
+
+.id {
+  color: #938f8f;
+  padding: 2px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px;
+  margin: 2px;
+  border: 0.5px solid #938f8f;
+  border-radius: 5px;
+  color: #938f8f;
+}
+
+/* Add margin to the title to create space for the tags */
+.title {
+  padding: 2px; /* Adjust the value as needed to control the space */
+}
+.card_priority_tag {
+  display: flex;
+}
+.priority {
+  display: inline-block;
+  padding: 2px;
+  margin: 2px;
+  border: 0.5px solid #938f8f;
+  border-radius: 5px;
+  color: #938f8f;
+}

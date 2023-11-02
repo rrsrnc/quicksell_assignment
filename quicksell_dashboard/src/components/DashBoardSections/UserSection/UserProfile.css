@@ -1,0 +1,33 @@
+.userProfile {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    font-size: 13px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(156, 225, 241);
+    color: rgb(8, 8, 8);
+    margin: 5px;
+    position: relative; /* Position relative for the parent element */
+}
+
+.userProfile::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color:inherit; /* Use green for online and red for offline, or any colors you prefer */
+    bottom: 0;
+    right: 0;
+}
+.online::before{
+    background-color: green;
+    color: white;
+}
+
+.offline::before {
+    background-color: rgb(206, 198, 198);
+    color: white;
+}
