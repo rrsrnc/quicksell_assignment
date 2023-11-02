@@ -13,7 +13,7 @@ const Card = (props) => {
         <div className="id">
           {ticket.id}
           <span className="user_profile">
-            {section === undefined ? (
+            {section !== "user" ? (
               <UserProfile userName={userName[ticket.userId]} />
             ) : (
               <div />
