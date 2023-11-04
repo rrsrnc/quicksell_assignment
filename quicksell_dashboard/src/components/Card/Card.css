@@ -14,7 +14,10 @@
   color: #938f8f;
   padding: 2px;
 }
-
+.tags{
+  display: flex;
+  flex-wrap: wrap;
+}
 .tag {
   display: inline-flex;
   align-items: center;

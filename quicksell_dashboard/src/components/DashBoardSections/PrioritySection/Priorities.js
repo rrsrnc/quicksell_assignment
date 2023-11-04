@@ -4,11 +4,13 @@ import PriorityLevel from "./PriorityLevel";
 
 const Priorities = (props) => {
   const { data, sortingOption, userName } = props;
-  const priorities = ["No priority", "Low", "Medium", "High", "Urgent"];
+  const priorities = ["No Priority", "Low", "Medium", "High", "Urgent"];
+  const noTicketsAvailable = Object.keys(data).length === 0;
 
   return (
     <>
-      {Object.keys(data).map((priority) => {
+    {noTicketsAvailable?(<div>no tickets available</div>):(
+      Object.keys(data).map((priority) => {
         let tickets = data[priority];
         if (sortingOption === "title") {
           // Sort the tickets by title in ascending order
@@ -39,7 +41,7 @@ const Priorities = (props) => {
             ))}
           </div>
         );
-      })}
+      }))}
     </>
   );
 };

@@ -6,7 +6,7 @@ import { BsFillCircleFill } from "react-icons/bs";
 const Card = (props) => {
   const { ticket, userName, section } = props;
 
-  console.log(userName);
+  // console.log(userName);
   return (
     <>
       <div className="card">
@@ -30,7 +30,7 @@ const Card = (props) => {
         </div>
         <div className="card_priority_tag">
           {section !== "priorities" ? (
-            <div className="card_priority_tag">
+            <div className="">
               <div className="priority">
                 <PriorityLevel priority={ticket.priority} />
               </div>
@@ -38,12 +38,14 @@ const Card = (props) => {
           ) : (
             <div></div>
           )}
-
-          {ticket.tag.map((tag) => (
-            <div className="tag" key={tag}>
-              <BsFillCircleFill size={10} /> <span>{tag}</span>
-            </div>
-          ))}
+          <div className="tags">
+            {ticket.tag.map((tag) => (
+              <div className="tag" key={tag}>
+                <BsFillCircleFill size={5} /> <span>{tag}</span>
+              </div>
+            ))}
+            
+          </div>
         </div>
       </div>
     </>

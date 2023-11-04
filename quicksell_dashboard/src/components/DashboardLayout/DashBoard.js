@@ -4,6 +4,7 @@ import Status from "../DashBoardSections/StatusSection/Status";
 import Users from "../DashBoardSections/UserSection/Users";
 
 const DashBoard = (props) => {
+  
   // Create objects to store data based on user IDs, priorities, and statuses
   const statusName = ["Todo", "In progress", "Cancelled", "Backlog", "Done"];
   const { groupingOption, sortingOption } = props;
@@ -14,6 +15,7 @@ const DashBoard = (props) => {
   statusName.forEach((status) => {
     statusObjects[status] = [];
   });
+  
   // Initialize user ID, priority, and status arrays
   if (props.data !== null) {
     props.data.users.forEach(({ id, name, available }) => {
@@ -49,7 +51,7 @@ const DashBoard = (props) => {
   }
   function Grouping() {
     if (groupingOption === "status") {
-      console.log(statusObjects);
+      // console.log(statusObjects);
       return (
         <Status
           data={statusObjects}
@@ -58,7 +60,7 @@ const DashBoard = (props) => {
         ></Status>
       );
     } else if (groupingOption === "user") {
-      console.log(userIdObjects);
+      // console.log(userIdObjects);
       return (
         <Users
           data={userIdObjects}
@@ -67,7 +69,7 @@ const DashBoard = (props) => {
         ></Users>
       );
     } else {
-      console.log(priorityObjects);
+      // console.log(priorityObjects);
       return (
         <Priorities
           data={priorityObjects}

@@ -18,14 +18,18 @@ const Header = (props) => {
     setDropdownVisible(!isDropdownVisible);
   };
 
-  // Handle the select change event
+  // Handle the select change event for Grouping
   const handleSelectChangeGroup = (event) => {
-    setSelectedValueGroup(event.target.value); // Update the state with the selected value
+    setSelectedValueGroup(event.target.value); 
     localStorage.setItem("selectedGroupingOption", event.target.value);
+    setDropdownVisible(false); 
   };
+
+  // Handle the select change event for Ordering
   const handleSelectChangeOrder = (event) => {
-    setSelectedValueOrder(event.target.value); // Update the state with the selected value
+    setSelectedValueOrder(event.target.value); 
     localStorage.setItem("selectedOrderingOption", event.target.value);
+    setDropdownVisible(false);
   };
 
   return (
@@ -39,7 +43,7 @@ const Header = (props) => {
           className={`dropdown-content ${isDropdownVisible ? "show" : "hide"}`}
         >
           <div className="drop_options">
-            <label className="label">Grouping </label>
+            <label className="label">Grouping</label>
             <select
               className="options"
               value={selectedValueGroup}
@@ -57,7 +61,7 @@ const Header = (props) => {
             </select>
           </div>
           <div className="drop_options">
-            <label className="label">Ordering </label>
+            <label className="label">Ordering</label>
             <select
               className="options"
               value={selectedValueOrder}

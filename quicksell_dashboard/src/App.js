@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 
-
 function App() {
-  const [data, setData] = useState(null); // State to store fetched data
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   useEffect(() => {
-    // Perform the fetch when the component mounts
     fetch('https://api.quicksell.co/v1/internal/frontend-assignment')
       .then(response => {
         if (!response.ok) {
@@ -14,18 +15,24 @@ function App() {
         return response.json();
       })
       .then(data => {
-        setData(data); // Store the fetched data in state
-        console.log(data);
-        
+        setData(data);
+        setLoading(false);
       })
       .catch(error => {
-        console.log("Network eror");
+        setError(error.message);
+        setLoading(false);
       });
   }, []);
 
   return (
     <div className="App">
-      <Header data={data}/>
+      {loading ? (
+        <div>Loading...</div>
+      ) : error ? ( 
+        <div>Network Error: {error}</div>
+      ) : (
+        <Header data={data} />
+      )}
     </div>
   );
 }
