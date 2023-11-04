@@ -26,7 +26,7 @@ const Card = (props) => {
           ) : (
             <span />
           )}
-          <span> {ticket.title}</span>
+          {ticket.title}
         </div>
         <div className="card_priority_tag">
           {section !== "priorities" ? (

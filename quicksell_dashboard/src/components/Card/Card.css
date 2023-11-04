@@ -28,9 +28,10 @@
   color: #938f8f;
 }
 
-/* Add margin to the title to create space for the tags */
+
 .title {
-  padding: 2px; /* Adjust the value as needed to control the space */
+  padding: 2px; 
+  word-wrap: break-word;
 }
 .card_priority_tag {
   display: flex;
